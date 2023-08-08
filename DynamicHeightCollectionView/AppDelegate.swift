@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  CompositionalLayoutTest
+//  DynamicHeightCollectionView
 //
 //  Created by Даниил Орлов on 07.08.2023.
 //
