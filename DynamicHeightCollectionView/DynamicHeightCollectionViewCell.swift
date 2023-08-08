@@ -48,7 +48,7 @@ final class DynamicHeightCollectionViewCell: UICollectionViewCell {
     }
     
     func calculateHeight(width: CGFloat, text: String) -> CGFloat {
-        let insets = INSET * 3
+        let insets = INSET * 2
         let textHeight = text.height(
             withConstrainedWidth: width,
             font: titleLabel.font
