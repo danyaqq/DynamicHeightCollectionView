@@ -29,14 +29,6 @@ final class ViewController: UIViewController {
     private let blueSquareView = UIView()
     private let greenSquareView = UIView()
     
-    private lazy var animator: UIViewPropertyAnimator = {
-        let cubicTiming = UICubicTimingParameters(
-            controlPoint1: CGPoint(x: 0.1, y: 0.67),
-            controlPoint2: CGPoint(x: 1, y: 1.0)
-        )
-        return UIViewPropertyAnimator(duration: 0.3, timingParameters: cubicTiming)
-    }()
-    
     // MARK: - Override methods
     
     override func viewDidLoad() {
@@ -47,11 +39,11 @@ final class ViewController: UIViewController {
             self?.collectionView.update(with: sample)
             self?.collectionView.updateHeight()
             
-            self?.animator.addAnimations {
+            let animator = UIViewPropertyAnimator(duration: 0.3, dampingRatio: 1) {
                 self?.collectionView.isHidden = false
                 self?.view.layoutIfNeeded()
             }
-            self?.animator.startAnimation()
+            animator.startAnimation()
         }
     }
 }
@@ -63,10 +55,9 @@ extension ViewController: DynamicHorizontalCollectionViewDelegate {
         _ collectionView: UICollectionView,
         currentIndexPath: IndexPath
     ) {
-        animator.addAnimations {
+        let animator = UIViewPropertyAnimator(duration: 0.3, dampingRatio: 1) {
             self.view.layoutIfNeeded()
         }
-        
         animator.startAnimation()
     }
 }
