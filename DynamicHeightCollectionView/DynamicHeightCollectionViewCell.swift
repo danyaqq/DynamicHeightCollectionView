@@ -89,7 +89,7 @@ private extension DynamicHeightCollectionViewCell {
         titleLabel.snp.makeConstraints { make in
             make.top.equalTo(squareView.snp.bottom).offset(INSET)
             make.horizontalEdges.equalToSuperview().inset(INSET)
-            make.bottom.equalTo(spacer.snp.top)
+            make.bottom.equalTo(spacer.snp.top).priority(.low)
         }
         
         spacer.snp.makeConstraints { make in
