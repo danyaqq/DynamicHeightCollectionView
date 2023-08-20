@@ -147,7 +147,7 @@ private extension ViewController {
     }
 }
 
-// MARK: - Private properties
+// MARK: - Private methods
 
 private extension ViewController {
     func fetchData(_ completion: @escaping (([String]) -> Void)) {

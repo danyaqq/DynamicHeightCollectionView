@@ -89,6 +89,8 @@ extension DynamicHorizontalCollectionView: UICollectionViewDataSource {
     }
 }
 
+// MARK: - UICollectionViewDelegateFlowLayout
+
 extension DynamicHorizontalCollectionView: UICollectionViewDelegateFlowLayout {
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         var visibleRect = CGRect()
@@ -115,7 +117,7 @@ extension DynamicHorizontalCollectionView: UICollectionViewDelegateFlowLayout {
     }
 }
 
-// MARK: - Private properties
+// MARK: - Private methods
 
 private extension DynamicHorizontalCollectionView {
     static func createFlowLayout() -> UICollectionViewFlowLayout {
